@@ -1,1 +1,18 @@
-<p>forms works!</p>
+<main>
+  <form [formGroup]="petForm">
+    <div class="form-wrapper">
+      <mat-form-field>
+        <mat-label>Pet Type</mat-label>
+        <mat-select [formControlName]="'petType'">
+          <mat-option value="cat">Cat</mat-option>
+          <mat-option value="dog">Dog</mat-option>
+        </mat-select>
+        <mat-error>{{ getErrorMessage("petType") }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ nameLabel }}</mat-label>
+        <input matInput [formControlName]="'name'" />
+      </mat-form-field>
+    </div>
+  </form>
+</main>
